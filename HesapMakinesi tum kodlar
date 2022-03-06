@@ -1,0 +1,90 @@
+#CREATED BY: MUHAMMED TEYUBOV
+from tkinter import*
+import math
+
+def topla():
+    s1=float(first.get())
+    s2=float(second.get())
+    cevap.configure(text=(s1+s2))
+
+def cikar():
+    s1=float(first.get())
+    s2=float(second.get())
+    cevap.configure(text=(s1-s2))
+
+def carpma():
+    s1=float(first.get())
+    s2=float(second.get())
+    cevap.configure(text=(s1*s2))
+
+def bolme():
+    s1=float(first.get())
+    s2=float(second.get())
+    cevap.configure(text=(s1/s2))
+
+def kok():
+    cevap.configure(text=(math.sqrt(int(first.get()))))
+
+def kare():
+    s1=float(first.get())
+    cevap.configure(text=(s1*s1))
+  
+def kup():
+    s1=float(first.get())
+    cevap.configure(text=(s1*s1*s1))       
+
+#root
+root=Tk()
+root.title('HesapMakinesi')
+root.geometry('300x350')
+root.resizable(False,False)
+
+#1-ci sayi
+first=Entry(root, bg='grey60', width=20)
+first.place(x=90, y=35)
+
+#2-ci sayi
+second=Entry(root, bg='grey60', width=20)
+second.place(x=90, y=60)
+
+#Arti Button
+arti=Button(root, bg='snow1', text='+', font=('Arial',15,'bold'),
+            width=10, height=1, command=(topla))
+arti.place(x=20, y=115)
+
+#cevap
+cevap=Label(root, text='Cevap', font=('Arial',10,'bold'), fg='darkred',
+            bg='grey80', width=15)
+cevap.place(x=90, y=86)
+
+#cikma Button
+cikma=Button(root, bg='snow1', text='-', font=('Arial',15,'bold'),
+            width=10, height=1, command=(cikar))
+cikma.place(x=160, y=115)
+
+#carpma Button
+carpma=Button(root, bg='snow1', text='*', font=('Arial',15,'bold'),
+            width=10, height=1, command=(carpma))
+carpma.place(x=160, y=165)
+
+#bolme Button
+bolme=Button(root, bg='snow1', text='/', font=('Arial',15,'bold'),
+            width=10, height=1, command=(bolme))
+bolme.place(x=20, y=165)
+
+#kok Button
+kok=Button(root, bg='snow1', text='√', font=('Arial',15,'bold'),
+            width=10, height=1, command=(kok))
+kok.place(x=20, y=220)
+
+#karesini bulma Button
+kare=Button(root, bg='snow1', text='a²', font=('Arial',15,'bold'),
+            width=10, height=1, command=(kare))
+kare.place(x=160, y=220)
+
+#kup bulma Button
+kup=Button(root, bg='snow1', text='a³', font=('Arial',15,'bold'),
+            width=10, height=1, command=(kup))
+kup.place(x=20, y=270)
+
+root.mainloop()
